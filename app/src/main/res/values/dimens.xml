@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="common_padding">20dp</dimen>
+    <dimen name="image_width">150dp</dimen>
+    <dimen name="paddingTop">200dp</dimen>
+    <dimen name="image_size">500dp</dimen>
+    <dimen name="padding_left">300dp</dimen>
+    <dimen name="alignment">50dp</dimen>
+    <dimen name="heading_size">30dp</dimen>
+</resources>

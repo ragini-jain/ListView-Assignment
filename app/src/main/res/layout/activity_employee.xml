@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/common_padding"
+    android:paddingLeft="@dimen/common_padding"
+    android:paddingRight="@dimen/common_padding"
+    android:paddingBottom="@dimen/common_padding"
+    tools:context=".EmployeeActivity">
+
+    <fragment
+        android:id="@+id/employeeFragment"
+        android:name="com.gl.login.EmployeeListFragment"
+        android:layout_width="@dimen/paddingTop"
+        android:layout_height="match_parent"/>
+
+    <fragment
+        android:id="@+id/employeeDetailsFragment"
+        android:name="com.gl.login.EmployeeDetailFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/paddingTop"/>
+
+</RelativeLayout>
