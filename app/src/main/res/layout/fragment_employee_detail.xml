@@ -5,16 +5,16 @@
     android:layout_height="match_parent"
     android:layout_marginLeft="@dimen/paddingTop"
     android:orientation="vertical"
-    android:paddingLeft="@dimen/common_padding"
     android:paddingRight="@dimen/common_padding"
     tools:context=".EmployeeDetailFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- TODO: Featruer_x -  Update blank fragment layout -->
     <ImageView
         android:id="@+id/imageDetailsView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
+        android:paddingTop="@dimen/paddingTop"
         android:minWidth="@dimen/image_size"
         android:maxHeight="@dimen/image_size"
         />

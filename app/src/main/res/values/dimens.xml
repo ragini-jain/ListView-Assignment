@@ -8,4 +8,5 @@
     <dimen name="padding_left">300dp</dimen>
     <dimen name="alignment">50dp</dimen>
     <dimen name="heading_size">30dp</dimen>
+    <dimen name="dimen_70_dp">70dp</dimen>
 </resources>

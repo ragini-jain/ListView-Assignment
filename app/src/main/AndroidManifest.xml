@@ -11,9 +11,9 @@
         android:largeHeap="true"
         android:hardwareAccelerated="false"
         android:theme="@style/AppTheme">
-        <activity android:name=".forgot_password"></activity>
+        <activity android:name=".ForgotPasswordActivity"></activity>
         <activity android:name=".EmployeeActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

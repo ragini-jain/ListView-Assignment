@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class forgot_password extends AppCompatActivity implements View.OnClickListener {
+public class ForgotPasswordActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText mPasswordLabel;
     EditText mConfirmPasswordLabel;
@@ -51,7 +51,7 @@ public class forgot_password extends AppCompatActivity implements View.OnClickLi
             if (password.equals(confirmPassword) || password.equals(mEditConfirmPassword)) {
                 mChangePasswordButton.setTextColor(Color.RED);
                 Toast.makeText(getApplicationContext(), "Password Change Successfully", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(this, MainActivity.class);
+                Intent intent = new Intent(this, LoginActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("changePassword",confirmPassword);
                 intent.putExtras(bundle);

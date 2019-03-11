@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button mForgotPasswordButton;
     Button mButtonLogin;
@@ -50,39 +50,41 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void loginUser() {
         mButtonLogin.setTextColor(Color.BLUE);
-       String username = mUserNameLabel.getText().toString();
-       String password = mPasswordLabel.getText().toString();
+        String username = mUserNameLabel.getText().toString();
+        String password = mPasswordLabel.getText().toString();
+
         String changePasswordUser = null;
-       try {
-           Intent intent = getIntent();
-           changePasswordUser = intent.getStringExtra("changePassword");
-       }catch (Exception e){
-          e.printStackTrace();
-       }
-        String userPassword = null;
-        if(changePasswordUser != null){
+        try {
+            Intent intent = getIntent();
+            changePasswordUser = intent.getStringExtra("changePassword");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        String userPassword;
+        if (changePasswordUser != null) {
             userPassword = changePasswordUser;
-        }else{
+        } else {
             userPassword = "admin1234";
         }
-       String userName = "admin";
+
+        String userName = "admin";
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
-       if(validateView(username,password)){
-         if((username.toLowerCase().trim().equals(userName)) && password.trim().toLowerCase().equals(userPassword)){
-               openEmployeeActivity();
-         }else{
-             mButtonLogin.setTextColor(Color.BLUE);
-             alertDialog.setTitle("Sorry, Password is Wrong, Do You want to Change Password ?");
-             alertDialog.setIcon(android.R.drawable.ic_dialog_alert);
-             alertDialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                 public void onClick(DialogInterface dialog, int which) {
-                     openForgotPasswordActivity();
-                 }
-             });
-             alertDialog.setNegativeButton("Cancel",null);
-             AlertDialog alert = alertDialog.create();
-             alert.show();
-         }
+        if (validateView(username, password)) {
+            if ((username.toLowerCase().trim().equals(userName)) && password.trim().toLowerCase().equals(userPassword)) {
+                openEmployeeActivity();
+            } else {
+                mButtonLogin.setTextColor(Color.BLUE);
+                alertDialog.setTitle("Sorry, Password is Wrong, Do You want to Change Password ?");
+                alertDialog.setIcon(android.R.drawable.ic_dialog_alert);
+                alertDialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        openForgotPasswordActivity();
+                    }
+                });
+                alertDialog.setNegativeButton("Cancel", null);
+                AlertDialog alert = alertDialog.create();
+                alert.show();
+            }
         }
     }
 
@@ -99,7 +101,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void openForgotPasswordActivity(){
-        Intent intent =  new Intent(this,forgot_password.class);
+        Intent intent =  new Intent(this, ForgotPasswordActivity.class);
         startActivity(intent);
     }
 
