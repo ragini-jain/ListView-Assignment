@@ -13,7 +13,7 @@ import com.gl.login.com.gl.login.model.Adapter;
 
 public class EmployeeListFragment extends Fragment{
     public EmployeeListFragment(){}
-    private ListView mEmployeeListView;
+    public ListView mEmployeeListView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

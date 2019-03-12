@@ -33,7 +33,6 @@ public class EmployeeDetailFragment extends Fragment {
             mEmployeeDesignation.setText(employee.getDesignation());
             mEmployeeLastCompany.setText(employee.getCompany());
         }
-
         return view;
     }
 
