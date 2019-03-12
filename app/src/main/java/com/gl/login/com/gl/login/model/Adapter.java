@@ -14,32 +14,13 @@ import java.util.ArrayList;
 
 public class Adapter extends BaseAdapter implements View.OnClickListener{
 
-    Context context;
+    private Context context;
     private ArrayList<Employee> employees;
-    LayoutInflater layoutInflater = null;
 
 
     public Adapter(Context context,ArrayList<Employee> employees){
-      //  super(context, R.layout.row_item, employees);
        this.context = context;
        this.employees = employees;
-       layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-    }
-
-    public Context getContext() {
-        return context;
-    }
-
-    public void setContext(Context context) {
-        this.context = context;
-    }
-
-    public ArrayList<Employee> getEmployees() {
-        return employees;
-    }
-
-    public void setEmployees(ArrayList<Employee> employees) {
-        this.employees = employees;
     }
 
     @Override

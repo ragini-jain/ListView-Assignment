@@ -18,6 +18,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     Button mButtonLogin;
     EditText mUserNameLabel;
     EditText mPasswordLabel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +28,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     }
 
+    /**
+     * init View
+     */
     private void initView() {
         mForgotPasswordButton= findViewById(R.id.forgotPasswordButton);
         mButtonLogin = findViewById(R.id.loginButton);
@@ -34,6 +38,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mPasswordLabel = findViewById(R.id.passwordEditView);
     }
 
+    /**
+     * onclick Listener
+     */
     private void registerListener() {
         mForgotPasswordButton.setOnClickListener(this);
         mButtonLogin.setOnClickListener(this);
@@ -48,12 +55,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
        }
     }
 
+    /**
+     * Login Method
+     */
     private void loginUser() {
         mButtonLogin.setTextColor(Color.BLUE);
         String username = mUserNameLabel.getText().toString();
         String password = mPasswordLabel.getText().toString();
 
-        String changePasswordUser = null;
+        String changePasswordUser=null;
         try {
             Intent intent = getIntent();
             changePasswordUser = intent.getStringExtra("changePassword");
@@ -88,27 +98,38 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
     }
 
+    /**
+     *
+     * @param username Name
+     * @param password Password
+     * @return boolean
+     */
     private boolean validateView(String username, String password){
+        boolean status = true;
         if(TextUtils.isEmpty(username)){
             Toast.makeText(getApplicationContext(),"Please Enter UserName",Toast.LENGTH_LONG).show();
-            return false;
+            status= false;
         }
         if (TextUtils.isEmpty(password)){
             Toast.makeText(getApplicationContext(),"Please Enter Password",Toast.LENGTH_LONG).show();
-            return false;
+            status= false;
         }
-        return true;
+        return status;
     }
 
+    /**
+     * Open Forgot Password Activity
+     */
     private void openForgotPasswordActivity(){
         Intent intent =  new Intent(this, ForgotPasswordActivity.class);
         startActivity(intent);
     }
 
-    private void openEmployeeActivity(){
-        //Explicit Intent
-        //Implicit Intent
-        Intent intent =  new Intent(this,EmployeeActivity.class);
+    /**
+     * Open Employee Activity
+     */
+    private void openEmployeeActivity() {
+        Intent intent = new Intent(this, EmployeeActivity.class);
         startActivity(intent);
     }
 }

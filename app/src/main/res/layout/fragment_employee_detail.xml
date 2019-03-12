@@ -8,7 +8,6 @@
     android:paddingRight="@dimen/common_padding"
     tools:context=".EmployeeDetailFragment">
 
-    <!-- TODO: Featruer_x -  Update blank fragment layout -->
     <ImageView
         android:id="@+id/imageDetailsView"
         android:layout_width="match_parent"
